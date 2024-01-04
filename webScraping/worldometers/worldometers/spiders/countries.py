@@ -1,6 +1,7 @@
 import logging
 import scrapy
-
+# from scrapy.shell import inspect_response # for debugging
+# from scrapy.utils.response import open_in_browser # for debugging
 
 class CountriesSpider(scrapy.Spider):
     name = "countries"
@@ -20,9 +21,14 @@ class CountriesSpider(scrapy.Spider):
             # yield scrapy.Request(url = absolute_url)
             
             yield response.follow(url = link, callback = self.parse_country, meta = {"country_name": name})
+        # yield response.follow(url = 'https://www.worldometers.info/world-population/china-population/', callback = self.parse_country, meta = {"country_name": 'China'}) # for debugging
             
     def parse_country(self, response):
-        # logging.info(response.url)
+        # inspect_response(response, self)
+        # open_in_browser(response) # for debugging
+        # logging.info(response.url) # for debugging
+        # logging.info(response.status) # for debugging
+        # logging.warning(response.status) # for debugging
         name = response.request.meta["country_name"]
         rows = response.xpath("(//table[@class='table table-striped table-bordered table-hover table-condensed table-list'])[1]/tbody/tr")
         for row in rows:

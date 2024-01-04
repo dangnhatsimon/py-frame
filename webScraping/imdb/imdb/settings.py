@@ -1,4 +1,4 @@
-# Scrapy settings for tinydeal project
+# Scrapy settings for imdb project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,10 +7,10 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "tinydeal"
+BOT_NAME = "imdb"
 
-SPIDER_MODULES = ["tinydeal.spiders"]
-NEWSPIDER_MODULE = "tinydeal.spiders"
+SPIDER_MODULES = ["imdb.spiders"]
+NEWSPIDER_MODULE = "imdb.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -37,20 +37,21 @@ ROBOTSTXT_OBEY = True
 #TELNETCONSOLE_ENABLED = False
 
 # Override the default request headers:
-# DEFAULT_REQUEST_HEADERS = {
-#    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-# }
+#DEFAULT_REQUEST_HEADERS = {
+#    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+#    "Accept-Language": "en",
+#}
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "tinydeal.middlewares.TinydealSpiderMiddleware": 543,
+#    "imdb.middlewares.ImdbSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "tinydeal.middlewares.TinydealDownloaderMiddleware": 543,
+#    "imdb.middlewares.ImdbDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -62,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "tinydeal.pipelines.TinydealPipeline": 300,
+#    "imdb.pipelines.ImdbPipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
